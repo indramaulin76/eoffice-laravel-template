@@ -190,14 +190,6 @@ return [
 - Email templates
 - Report templates
 
-## 📖 Documentation
-
-- [Installation Guide](docs/installation.md)
-- [User Manual](docs/user-guide.md)
-- [Admin Guide](docs/admin-guide.md)
-- [API Documentation](docs/api.md)
-- [Customization Guide](docs/customization.md)
-
 ## 🚗 Roadmap
 
 ### Phase 1: Core Enhancement
