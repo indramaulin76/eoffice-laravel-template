@@ -230,12 +230,6 @@ return [
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 💬 Support
-
-For support and questions:
-- Create an [Issue](https://github.com/your-username/eoffice-laravel-template/issues)
-- Check [Documentation](docs/)
-- Contact: your-email@example.com
 
 ## 🏆 Credits
 
