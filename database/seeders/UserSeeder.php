@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         $sekretaris = Role::firstOrCreate(['name' => 'Sekretaris']);
         $pengelolaKeuangan = Role::firstOrCreate(['name' => 'Pengelola Keuangan']);
         $pengadministrasiPersuratan = Role::firstOrCreate(['name' => 'Pengadministrasi Persuratan']);
+        $pegawai = Role::firstOrCreate(['name' => 'Pegawai']);
 
         // create permissions
         $permissionRevisi = Permission::firstOrCreate(['name' => 'revisi']);
@@ -30,12 +31,15 @@ class UserSeeder extends Seeder
         $permissionBuatSurat = Permission::firstOrCreate(['name' => 'buat surat']);
         $permissionLihatSurat = Permission::firstOrCreate(['name' => 'lihat surat']);
         $permissionBuatArsipSurat = Permission::firstOrCreate(['name' => 'buat arsip surat']);
+        $permissionEditSurat = Permission::firstOrCreate(['name' => 'edit surat']);
+        $permissionHapusSurat = Permission::firstOrCreate(['name' => 'hapus surat']);
 
         // assign permissions to roles
-        $supervisor->givePermissionTo([$permissionRevisi, $permissionLihatSurat]);
-        $sekretaris->givePermissionTo($permissionBuatRapat);
-        $pengelolaKeuangan->givePermissionTo($permissionBuatSppd);
-        $pengadministrasiPersuratan->givePermissionTo([$permissionBuatSurat, $permissionLihatSurat, $permissionBuatArsipSurat]);
+        $supervisor->givePermissionTo([$permissionRevisi, $permissionLihatSurat, $permissionEditSurat, $permissionHapusSurat]);
+        $sekretaris->givePermissionTo([$permissionBuatRapat, $permissionLihatSurat, $permissionEditSurat, $permissionHapusSurat]);
+        $pengelolaKeuangan->givePermissionTo([$permissionBuatSppd, $permissionLihatSurat]);
+        $pengadministrasiPersuratan->givePermissionTo([$permissionBuatSurat, $permissionLihatSurat, $permissionBuatArsipSurat, $permissionEditSurat, $permissionHapusSurat]);
+        $pegawai->givePermissionTo([$permissionLihatSurat, $permissionBuatSurat]);
 
         User::create([
             'unit_kerja_id' => 1,
@@ -75,6 +79,9 @@ class UserSeeder extends Seeder
                 'supervisor_id' => $user['supervisor_id'],
                 'password' => bcrypt($user['password']),
             ]);
+
+            // Assign default role to regular users
+            $user->assignRole($pegawai);
 
             for ($i = 1; $i <= 6; $i++) {
                 Log::create([

@@ -98,7 +98,7 @@
                         </a>
                     @endcan
                 </div>
-                @can('buat surat')
+                @auth
                     <a href="{{ route('surat-masuk.index') }}" class="w-100 text-decoration-none">
                         <div class="w-100 h-100 sidebar-button ps-3 py-3 d-flex align-items-center gap-2"
                             style="{{ Route::is('surat-masuk.index') ? 'background-color: #144272; color: white;' : 'background-color: white; color: black' }}">
@@ -106,8 +106,8 @@
                             Surat Masuk
                         </div>
                     </a>
-                @endcan
-                @can('lihat surat')
+                @endauth
+                @auth
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -144,7 +144,7 @@
                             </div>
                         </a>
                     </div>
-                @endcan
+                @endauth
 
             </div>
             {{-- accordion end --}}

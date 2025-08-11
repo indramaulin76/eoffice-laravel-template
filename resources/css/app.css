@@ -1,0 +1,147 @@
+/* Inter Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Components */
+@layer components {
+    .btn-primary {
+        @apply inline-flex items-center px-4 py-2 bg-primary-600 border border-transparent rounded-lg font-semibold text-sm text-white tracking-wide hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150;
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-lg font-semibold text-sm text-gray-700 tracking-wide hover:bg-gray-50 focus:bg-gray-50 active:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition ease-in-out duration-150;
+    }
+
+    .btn-success {
+        @apply inline-flex items-center px-4 py-2 bg-success-600 border border-transparent rounded-lg font-semibold text-sm text-white tracking-wide hover:bg-success-700 focus:bg-success-700 active:bg-success-900 focus:outline-none focus:ring-2 focus:ring-success-500 focus:ring-offset-2 transition ease-in-out duration-150;
+    }
+
+    .btn-danger {
+        @apply inline-flex items-center px-4 py-2 bg-danger-600 border border-transparent rounded-lg font-semibold text-sm text-white tracking-wide hover:bg-danger-700 focus:bg-danger-700 active:bg-danger-900 focus:outline-none focus:ring-2 focus:ring-danger-500 focus:ring-offset-2 transition ease-in-out duration-150;
+    }
+
+    .card {
+        @apply bg-white overflow-hidden shadow-sm sm:rounded-lg border border-gray-200;
+    }
+
+    .card-header {
+        @apply px-6 py-4 bg-gray-50 border-b border-gray-200;
+    }
+
+    .card-body {
+        @apply p-6;
+    }
+
+    .form-input {
+        @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 transition duration-150 ease-in-out;
+    }
+
+    .form-select {
+        @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 transition duration-150 ease-in-out;
+    }
+
+    .form-textarea {
+        @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 transition duration-150 ease-in-out;
+    }
+
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-primary {
+        @apply bg-primary-100 text-primary-800;
+    }
+
+    .badge-success {
+        @apply bg-success-100 text-success-800;
+    }
+
+    .badge-warning {
+        @apply bg-warning-100 text-warning-800;
+    }
+
+    .badge-danger {
+        @apply bg-danger-100 text-danger-800;
+    }
+
+    .alert {
+        @apply rounded-lg p-4 mb-4;
+    }
+
+    .alert-success {
+        @apply bg-success-50 border border-success-200 text-success-800;
+    }
+
+    .alert-warning {
+        @apply bg-warning-50 border border-warning-200 text-warning-800;
+    }
+
+    .alert-danger {
+        @apply bg-danger-50 border border-danger-200 text-danger-800;
+    }
+
+    .alert-info {
+        @apply bg-primary-50 border border-primary-200 text-primary-800;
+    }
+}
+
+/* Custom animations */
+@layer utilities {
+    .animate-fade-in {
+        animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .animate-slide-in {
+        animation: slideIn 0.3s ease-out;
+    }
+
+    .animate-bounce-in {
+        animation: bounceIn 0.6s ease-out;
+    }
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

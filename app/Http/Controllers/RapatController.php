@@ -33,7 +33,10 @@ class RapatController extends Controller
             return Carbon::parse($rapat->waktu_mulai)->isFuture();
         });
 
-        return view('rapat.index', compact( 'onGoingRapats' ,'pastRapats', 'upcomingRapats'));
+        // For modern view, get all rapats with pagination
+        $rapats = Rapat::latest()->paginate(10);
+
+        return view('rapat.modern-index', compact('rapats', 'onGoingRapats' ,'pastRapats', 'upcomingRapats'));
     }
 
     public function create()

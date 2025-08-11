@@ -38,6 +38,6 @@ class DashboardController extends Controller
             ];
         }
 
-        return view('dashboard', compact('title', 'events', 'pegawais', 'rapats'));
+        return view('dashboard.modern', compact('title', 'events', 'pegawais', 'rapats'));
     }
 }

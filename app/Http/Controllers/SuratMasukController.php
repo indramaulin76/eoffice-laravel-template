@@ -12,14 +12,14 @@ class SuratMasukController extends Controller
     public function index()
     {
         $title = 'Surat Masuk';
-        $suratMasuk = SuratMasuk::all();
-        return view('surat-masuk.index', compact('title', 'suratMasuk'));
+        $suratMasuks = SuratMasuk::latest()->paginate(10);
+        return view('surat-masuk.modern-index', compact('title', 'suratMasuks'));
     }
 
     public function create()
     {
         $title = 'Tambah Surat Masuk';
-        return view('surat-masuk.create', compact('title'));
+        return view('surat-masuk.modern-form', compact('title'));
     }
 
     public function store(SuratMasukRequest $request)
@@ -57,7 +57,7 @@ class SuratMasukController extends Controller
     public function edit(SuratMasuk $surat)
     {
         $title = 'Edit Surat Masuk';
-        return view('surat-masuk.edit', compact('title', 'surat'));
+        return view('surat-masuk.modern-form', compact('title', 'surat'));
     }
 
     public function update(SuratMasukRequest $request, SuratMasuk $surat)

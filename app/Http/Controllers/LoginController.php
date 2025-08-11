@@ -13,7 +13,7 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('login.index', [
+        return view('auth.modern-login', [
             'title' => 'Login',
         ]);
     }
