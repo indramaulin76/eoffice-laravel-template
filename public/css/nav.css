@@ -1,0 +1,22 @@
+* {
+padding: 0px;
+}
+
+.header1 {
+background-color: #144272;
+}
+
+.line {
+background-color: red;
+width: 100%;
+height: 5px;
+border-radius: 20px;
+}
+
+.hvr:hover {
+text-emphasis: red;
+}
+
+.nav-link {
+margin: 10px;
+}
