@@ -1,4 +1,4 @@
-# E-Office Laravel Template
+# E-Office Laravel
 
 🏢 **Sistem E-Office berbasis Laravel untuk Manajemen Administrasi Organisasi**
 
